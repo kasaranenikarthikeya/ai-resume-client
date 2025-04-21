@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html --dist-dir dist"
+    "build": "parcel build index.html --dist-dir dist --no-source-maps"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -12,9 +12,16 @@
   },
   "devDependencies": {
     "parcel": "^2.12.0",
-    "@parcel/transformer-react-refresh-wrap": "^2.12.0"
+    "@parcel/transformer-react-refresh-wrap": "^2.12.0",
+    "@parcel/packager-js": "^2.12.0"
   },
   "engines": {
     "node": "22.x"
-  }
+  },
+  "browserslist": [
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions"
+  ],
+  "source": "index.html"
 }
