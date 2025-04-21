@@ -4,7 +4,7 @@ import App from "./App";
 import "./styles.css";
 
 // Dynamically set the API base URL for local and deployed environments
-window.API_BASE_URL = process.env.REACT_APP_API_URL || "https://ai-resume-builder-3lej.onrender.com";
+window.API_BASE_URL = process.env.REACT_APP_API_URL || "https://ai-resume-maker-gjv8.onrender.com";
 
 const root = createRoot(document.getElementById("root"));
 root.render(<App />);
