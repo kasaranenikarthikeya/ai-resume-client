@@ -19,12 +19,12 @@ const App = () => {
         setResume("");
 
         try {
-            const response = await fetch(`${window.API_BASE_URL}/generate-resume`, {
+            const response = await fetch(`${window.API_BASE_URL}/api/generate-resume`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ prompt }),
+                body: JSON.stringify({ userPrompt: prompt }), // Changed to userPrompt
             });
 
             const data = await response.json();
