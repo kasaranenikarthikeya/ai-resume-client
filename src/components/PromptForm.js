@@ -10,7 +10,7 @@ const PromptForm = () => {
 
   const generateResume = async () => {
     try {
-      const response = await axios.post("http://localhost:3001/api/generate-resume", { userPrompt: prompt });
+      const response = await axios.post(`${window.API_BASE_URL}/api/generate-resume`, { userPrompt: prompt });
       if (response.data.resume) {
         setResume(formatResume(response.data.resume));
       } else {
@@ -24,11 +24,10 @@ const PromptForm = () => {
 
   // Function to format the resume into proper sections
   const formatResume = (resumeText) => {
-    // Add formatting to the sections
     return resumeText
       .replace(/(Summary|Skills|Experience|Education|Projects|Certifications)/g, (match) => `<h2>${match}</h2>`)
       .replace(/\n/g, "<br/>")
-      .replace(/•/g, "<ul><li>")  // Add bullets for skills and achievements
+      .replace(/•/g, "<ul><li>")
       .replace(/<br\/>$/, "</ul>");
   };
 
@@ -60,8 +59,3 @@ const PromptForm = () => {
 };
 
 export default PromptForm;
-
-
-
-
-// ! above is working
