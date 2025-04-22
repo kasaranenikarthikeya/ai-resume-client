@@ -63,7 +63,7 @@ export default function App() {
         setError(null);
         console.log("Sending prompt:", prompt);
         try {
-            const response = await fetch("http://localhost:8000/api/generate-resume", {
+            const response = await fetch("https://ai-resume-maker-sapk.onrender.com", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
