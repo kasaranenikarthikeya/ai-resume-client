@@ -13,6 +13,8 @@ export default function App() {
     const [isDarkMode, setIsDarkMode] = useState(false);
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
+    const API_URL = "https://ai-resume-maker-sapk.onrender.com";
+
     // Theme toggle
     useEffect(() => {
         document.body.className = isDarkMode ? "dark" : "light";
@@ -63,7 +65,7 @@ export default function App() {
         setError(null);
         console.log("Sending prompt:", prompt);
         try {
-            const response = await fetch("https://ai-resume-maker-sapk.onrender.com", {
+            const response = await fetch(`${API_URL}/api/generate-resume`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
